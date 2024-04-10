@@ -18,7 +18,7 @@ body {
   font-family: "Poppins", sans-serif;
   min-height: 100vh;
   font-size: 1rem;
-  background-color: #f0fff9;
+  background: linear-gradient(180deg, rgb(240, 255, 249) 0%, rgb(216, 233, 230) 100%);
 }
 
 .container {
@@ -37,45 +37,49 @@ body {
 .hero-section {
   display: flex;
   min-height: 100vh;
+  scroll-snap-align: start;
 }
 .hero-section .hero-aside {
   display: flex;
   flex-direction: column;
-  flex-basis: 8%;
+  align-items: center;
+  width: 8rem;
   border-right: 0.1rem solid #d8e9e6;
   padding: 0rem 1rem 1rem 1rem;
 }
 .hero-section .hero-aside .logo {
   display: flex;
   align-items: center;
-  min-height: 8rem;
+  min-height: 6rem;
   padding: 1rem 0rem 1rem 0rem;
 }
 .hero-section .hero-aside .logo #acronym {
   display: flex;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   font-size: 2.2rem;
   font-family: "Playfair Display", serif;
   text-decoration: none;
+  letter-spacing: 0.15rem;
   color: #1a1c1e;
 }
 .hero-section .hero-aside .logo #acronym span {
   align-self: flex-end;
   font-size: 1.6rem;
   padding-bottom: 0.1rem;
+  color: #0e7777;
 }
 .hero-section .hero-content {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
-  gap: 4rem;
+  gap: 1.8rem;
 }
 .hero-section .hero-content .navbar {
   display: flex;
   justify-content: space-between;
-  min-height: 8rem;
-  padding: 2rem 4rem;
+  min-height: 6rem;
+  padding: 1rem 8rem 0rem 6rem;
 }
 .hero-section .hero-content .navbar .nav-list {
   display: flex;
@@ -83,7 +87,9 @@ body {
   gap: 4rem;
 }
 .hero-section .hero-content .navbar .nav-list a {
+  font-size: 1.2rem;
   text-decoration: none;
+  color: #1a1c1e;
 }
 .hero-section .hero-content .navbar .contact-me {
   display: flex;
@@ -91,14 +97,17 @@ body {
   gap: 4rem;
 }
 .hero-section .hero-content .navbar .contact-me a {
+  font-size: 1.2rem;
   text-decoration: none;
+  color: #1a1c1e;
 }
 .hero-section .hero-content .hero-description {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   letter-spacing: 0.05rem;
   line-height: 1.6;
+  padding: 0rem 4rem 0rem 6rem;
 }
 .hero-section .hero-content .hero-description .introduction {
   max-width: 37rem;
@@ -107,7 +116,7 @@ body {
   font-size: 1.44rem;
 }
 .hero-section .hero-content .hero-description .introduction h2:nth-child(2) {
-  font-size: 2.986rem;
+  font-size: 2.488rem;
 }
 .hero-section .hero-content .hero-description .introduction h2:nth-child(3) {
   font-size: 1.44rem;
@@ -115,10 +124,24 @@ body {
 .hero-section .hero-content .hero-description .introduction p {
   text-align: justify;
   font-size: 1rem;
+  max-width: 30rem;
+  padding-top: 0.8rem;
+}
+.hero-section .hero-content .hero-description .visuals-container {
+  width: 22rem;
+  border-radius: 13rem;
+  opacity: 0.95;
+  overflow: hidden;
+}
+.hero-section .hero-content .hero-description .visuals-container img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.95;
 }
 .hero-section .hero-content .hero-images-container {
   display: flex;
   justify-content: center;
+  margin-right: 8rem;
 }
 .hero-section .hero-content .hero-images-container .images-bg {
   display: flex;
@@ -126,7 +149,7 @@ body {
   align-items: center;
   gap: 6rem;
   position: relative;
-  max-width: 45rem;
+  max-width: 42rem;
 }
 .hero-section .hero-content .hero-images-container .images-bg #keyboard {
   -o-object-fit: cover;
@@ -135,7 +158,7 @@ body {
 .hero-section .hero-content .hero-images-container .images-bg #leftHand {
   position: absolute;
   top: 17%;
-  left: 0%;
+  left: -4%;
   width: 20rem;
   height: 21.85rem;
 }
@@ -151,4 +174,19 @@ body {
   border-radius: 0.6rem;
   text-decoration: none;
   padding: 0.8rem;
+  color: #1a1c1e;
+}
+
+#secondPage {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+}
+
+.scroll {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
 }/*# sourceMappingURL=style.css.map */
