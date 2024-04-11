@@ -25,13 +25,35 @@ body {
   padding: 1rem;
 }
 
-.frame {
-  border: 0.1rem solid #1a1c1e;
-  border-radius: 0.6rem;
-  max-width: 1440px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 1rem 2rem;
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+.section .animate {
+  opacity: 0;
+  filter: blur(0.3rem);
+  transition: 1s;
+}
+.section.show-animate .animate {
+  opacity: 1;
+  filter: blur(0);
+}
+.section .animate {
+  filter: blur(0.3rem);
+  transition: 1s;
+}
+.section h2 {
+  position: relative;
+  font-size: 6rem;
+}
+.section p {
+  position: relative;
+  text-align: center;
+  font-size: 2.5rem;
 }
 
 .hero-section {
@@ -101,13 +123,18 @@ body {
   text-decoration: none;
   color: #1a1c1e;
 }
+.hero-section .hero-content .navbar .contact-me a:last-child {
+  border: 0.1rem solid #1a1c1e;
+  border-radius: 0.6rem;
+  padding: 0.6rem;
+}
 .hero-section .hero-content .hero-description {
   display: flex;
   justify-content: space-between;
   align-items: center;
   letter-spacing: 0.05rem;
   line-height: 1.6;
-  padding: 0rem 4rem 0rem 6rem;
+  padding: 0rem 4rem 0rem 4rem;
 }
 .hero-section .hero-content .hero-description .introduction {
   max-width: 37rem;
@@ -177,16 +204,53 @@ body {
   color: #1a1c1e;
 }
 
-#secondPage {
-  display: flex;
-  min-height: 100vh;
-  justify-content: center;
-  align-items: center;
-  scroll-snap-align: start;
+.about-section.show-animate .animate {
+  transform: translateX(0%);
+}
+.about-section .animate {
+  transform: translateX(-100%);
+  min-width: 44rem;
 }
 
-.scroll {
-  scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
+.projects-section.show-animate .animate {
+  transform: translateX(0%);
+}
+.projects-section .animate {
+  transform: translateX(100%);
+  min-width: 44rem;
+}
+
+.help-section.show-animate .animate .showRight-animate {
+  width: 0;
+}
+.help-section .animate .showRight-animate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgb(240, 255, 249) 0%, rgb(216, 233, 230) 100%);
+  transition: 1s;
+  transition-delay: calc(0.2s * var(--i));
+}
+
+.contact-us-section.show-animate .animate {
+  transform: scale(1);
+}
+.contact-us-section .animate {
+  transform: scale(0.7);
+  min-width: 44rem;
+}
+
+.image-test.show-animate .images .animate {
+  transform: translateX(0%);
+}
+.image-test .images {
+  display: flex;
+  gap: 2rem;
+}
+.image-test .images .animate {
+  transform: translateX(-100%);
+  transition-delay: calc(0.2s * var(--i));
+  max-width: 20rem;
 }/*# sourceMappingURL=style.css.map */
